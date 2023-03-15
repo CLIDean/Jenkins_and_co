@@ -2,8 +2,8 @@
 
 terraform {
   backend "s3" {
-    bucket = "euran-terraform-statefile"
-    key = "eks/ngg_cluster_name/statefile"
+    bucket = "terraform-state-file-for-jenkins-ap-south-1"
+    key = "eks/jenkins_cluster/statefile"
     region = "ap-south-1"
   }
 } 
