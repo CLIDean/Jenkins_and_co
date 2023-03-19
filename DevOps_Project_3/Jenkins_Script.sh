@@ -20,6 +20,7 @@ terraform $ACTION --auto-approve
 if [ $ACTION == "apply" ]; then
 #login into the eks cluster
 aws eks update-kubeconfig --name $CLUSTER_NAME --region $REGION
+sudo mkdir -p /var/lib/jenkins/bin && sudo cp ./kubectl /var/lib/jenkins/bin/kubectl && export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/var/lib/jenkins/bin
 kubectl get pods -A
 
 #installing bitnami helm chart
